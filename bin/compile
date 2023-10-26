@@ -9,8 +9,6 @@ ENV_DIR="$3"
 
 echo "-----> Installing OpenResty ..."
 tar -zxf "dist/openresty-$STACK".tar.gz -C "$BUILD_DIR"
-cp -a conf/nginx.conf.default "$BUILD_DIR/openresty/nginx/conf"
-cp -a bin/startopenresty "$BUILD_DIR/openresty/bin"
 fold -w 100 -s < "$BUILD_DIR/openresty/openresty-V.txt" | pr -to 7
 
 # Add a profile.d script to add openresty tools and luarocks to PATH
